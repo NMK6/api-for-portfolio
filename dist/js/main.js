@@ -6,9 +6,13 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_Search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _views_searchView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _views_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 
 var state = {};
@@ -16,11 +20,13 @@ var state = {};
 var handleSearch = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(function* (e) {
     e.preventDefault();
-    var query = "44418";
+    var query = _views_searchView__WEBPACK_IMPORTED_MODULE_1__.getInput();
+    console.log(query);
 
     if (query) {
       state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query);
       yield state.search.getResult();
+      console.log(state.search.result);
     }
   });
 
@@ -29,7 +35,7 @@ var handleSearch = /*#__PURE__*/function () {
   };
 }();
 
-document.querySelector(".search").addEventListener("submit", handleSearch);
+_views_base__WEBPACK_IMPORTED_MODULE_2__.elements.searchForm.addEventListener("submit", handleSearch);
 
 /***/ }),
 /* 1 */
@@ -53,25 +59,21 @@ class Search {
 
     return _asyncToGenerator(function* () {
       try {
-        var res = yield fetch("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/".concat(_this.woeid, "/"));
+        var res = yield fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=".concat(_this.woeid, "/"));
         _this.result = yield res.json();
-        console.log(_this.result);
       } catch (error) {
         alert(error);
       }
     })();
-  } //   getResult() {
-  //     fetch(
-  //       `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${this.woeid}/`
-  //     )
-  //       .then((result) => {
-  //         return result.json();
-  //       })
-  //       .then((data) => {
-  //         this.res = data;
-  //         console.log(this.res);
-  //       })
-  //       .catch((error) => console.log(error));
+  } //   async getResult() {
+  //     try {
+  //       const res = await fetch(
+  //         `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${this.woeid}/`
+  //       );
+  //       this.result = await res.json();
+  //     } catch (error) {
+  //       alert(error);
+  //     }
   //   }
 
 
@@ -79,6 +81,31 @@ class Search {
 
 /***/ }),
 /* 2 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getInput": () => /* binding */ getInput
+/* harmony export */ });
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+
+var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value; // export const renderResults =
+
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "elements": () => /* binding */ elements
+/* harmony export */ });
+var elements = {
+  searchForm: document.querySelector(".search"),
+  searchInput: document.querySelector(".search__field")
+};
+
+/***/ }),
+/* 4 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -179,6 +206,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// Load entry module
 /******/ 	__webpack_require__(0);
 /******/ 	// This entry module used 'exports' so it can't be inlined
-/******/ 	__webpack_require__(2);
+/******/ 	__webpack_require__(4);
 /******/ })()
 ;
