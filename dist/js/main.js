@@ -1,46 +1,65 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is not neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
+/******/ 	var __webpack_modules__ = ([
+/* 0 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n\nconsole.log(_test__WEBPACK_IMPORTED_MODULE_0__.default);\n\n//# sourceURL=webpack://public_html/./src/js/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _models_Search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var state = {};
+var search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default("44418");
+console.log(search);
+search.getResult();
 
 /***/ }),
-
-/***/ "./src/js/test.js":
-/*!************************!*\
-  !*** ./src/js/test.js ***!
-  \************************/
+/* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconsole.log(\"1\");\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (23);\n\n//# sourceURL=webpack://public_html/./src/js/test.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Search
+/* harmony export */ });
+class Search {
+  constructor(woeid) {
+    this.woeid = woeid;
+  } //   async getResult() {
+  //     const proxy = "https://cors-anywhere.herokuapp.app/";
+  //     const url = `${proxy}https://www.metaweather.com/api/location/${this.woeid}/`;
+  //     try {
+  //       const res = await fetch(url);
+  //       console.log(res);
+  //       this.result = await res.json();
+  //       console.log(this.result);
+  //     } catch (error) {
+  //       alert(error);
+  //     }
+  //   }
+
+
+  getResult() {
+    fetch("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/".concat(this.woeid, "/")).then(result => {
+      return result.json();
+    }).then(data => {
+      this.res = data;
+      console.log(this.res);
+    }).catch(error => console.log(error));
+  }
+
+}
 
 /***/ }),
-
-/***/ "./src/sass/main.scss":
-/*!****************************!*\
-  !*** ./src/sass/main.scss ***!
-  \****************************/
+/* 2 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"css/main.css\");\n\n//# sourceURL=webpack://public_html/./src/sass/main.scss?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "css/main.css");
 
 /***/ })
-
-/******/ 	});
+/******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -129,8 +148,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./src/js/index.js");
+/******/ 	__webpack_require__(0);
 /******/ 	// This entry module used 'exports' so it can't be inlined
-/******/ 	__webpack_require__("./src/sass/main.scss");
+/******/ 	__webpack_require__(2);
 /******/ })()
 ;
