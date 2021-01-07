@@ -1,0 +1,57 @@
+.search {
+  @include row-flex-center(center, column);
+
+  height: 100vh;
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__form {
+    @include row-flex-center(space-between, row);
+    width: 35rem;
+    height: 4.5rem;
+    background-color: #f28705;
+    border-radius: 3rem;
+  }
+  &__field {
+    background-color: transparent;
+    @include row-flex-center(flex-start, row);
+    padding-left: 2rem;
+    border: none;
+    height: 100%;
+    width: 60%;
+  }
+  &__btn {
+    height: 100%;
+    width: 40%;
+    background-color: $white-color;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    width: 3rem;
+    position: relative;
+    &::after {
+      @include before-basic;
+      top: -0.4rem;
+      left: 1.3rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background-color: $white-color;
+      border: 1px solid $black-color;
+    }
+    &::before {
+      @include before-basic;
+      width: 0.4rem;
+      height: 2px;
+      border-radius: 5px;
+      border: 1px solid $black-color;
+      transform-origin: top;
+      left: 1.8rem;
+      top: 0.2rem;
+      transform: rotate(45deg);
+    }
+  }
+}

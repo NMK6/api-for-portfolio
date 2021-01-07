@@ -1,5 +1,33 @@
+@font-face {
+  font-family: "selimaregular";
+  src: url("./fonts/selima_-webfont.woff2") format("woff2"),
+    url("./fonts/selima_-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "open_sanslight";
+  src: url("./fonts/opensanslight-2yxe-webfont.woff2") format("woff2"),
+    url(".fotns/opensanslight-2yxe-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-size: 16px;
-  font-family: "Courier New", Courier, monospace;
-  color: #fff;
+  font-family: "open_sanslight";
+  color: $black-color;
+}
+.search__field,
+.search__btn {
+  font-size: 1.1rem;
+  font-family: "open_sanslight";
+  font-weight: 100;
+  color: $black-color;
+}
+.search__title {
+  font-size: 12rem;
+  font-weight: bold;
+  color: $white-color;
+  font-family: "selimaregular";
 }

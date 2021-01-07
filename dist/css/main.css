@@ -6,10 +6,129 @@
 
 body {
   background-color: #314035;
+  width: 100%;
+  height: 100vh;
 }
 
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+@font-face {
+  font-family: "selimaregular";
+  src: url("./fonts/selima_-webfont.woff2") format("woff2"), url("./fonts/selima_-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "open_sanslight";
+  src: url("./fonts/opensanslight-2yxe-webfont.woff2") format("woff2"), url(".fotns/opensanslight-2yxe-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-size: 16px;
-  font-family: "Courier New", Courier, monospace;
-  color: #fff;
+  font-family: "open_sanslight";
+  color: #424242;
+}
+
+.search__field,
+.search__btn {
+  font-size: 1.1rem;
+  font-family: "open_sanslight";
+  font-weight: 100;
+  color: #424242;
+}
+
+.search__title {
+  font-size: 12rem;
+  font-weight: bold;
+  color: #f2f2f2;
+  font-family: "selimaregular";
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.search__title {
+  margin-bottom: 2rem;
+}
+.search__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 35rem;
+  height: 4.5rem;
+  background-color: #f28705;
+  border-radius: 3rem;
+}
+.search__field {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+  border: none;
+  height: 100%;
+  width: 60%;
+}
+.search__btn {
+  height: 100%;
+  width: 40%;
+  background-color: #f2f2f2;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search__icon {
+  width: 3rem;
+  position: relative;
+}
+.search__icon::after {
+  position: absolute;
+  content: "";
+  top: -0.4rem;
+  left: 1.3rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  border: 1px solid #424242;
+}
+.search__icon::before {
+  position: absolute;
+  content: "";
+  width: 0.4rem;
+  height: 2px;
+  border-radius: 5px;
+  border: 1px solid #424242;
+  transform-origin: top;
+  left: 1.8rem;
+  top: 0.2rem;
+  transform: rotate(45deg);
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.main__image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/cooking.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
 }

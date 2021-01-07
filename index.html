@@ -6,17 +6,27 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="/dist/css/main.css" />
   </head>
-  <body>
-    <form class="search">
-      <input
-        type="text"
-        class="search__field"
-        placeholder="What are you going to cook ..."
-      />
 
-      <button class="search__btn">Find out</button>
-    </form>
-    <section class="recepes">
+  <body>
+    <div class="main" class="main">
+      <div class="main__image">
+        <div class="search">
+          <h2 class="search__title">Let's cook</h2>
+          <form class="search__form">
+            <input
+              type="text"
+              class="search__field"
+              placeholder="Search for recepes..."
+            />
+
+            <button class="btn search__btn">
+              <span class="search__icon"></span>Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <section class="recepes" style="display: none">
       <div class="recepes__list"></div>
     </section>
     <script src="/dist/js/main.js"></script>

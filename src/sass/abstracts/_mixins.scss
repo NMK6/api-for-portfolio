@@ -1,0 +1,10 @@
+@mixin row-flex-center($content, $direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: center;
+}
+@mixin before-basic {
+  position: absolute;
+  content: "";
+}

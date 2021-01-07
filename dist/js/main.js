@@ -24,11 +24,12 @@ var handleSearch = /*#__PURE__*/function () {
     console.log(query);
 
     if (query) {
-      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query); // searchView.clearInput();
-      // searchView.clearRecepes();
-
+      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query);
+      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearInput();
+      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearRecepes();
       yield state.search.getResult();
-      console.log(state.search.result); // searchView.renderResults(state.search.result);
+      console.log(state.search.result.meals[0].strMeal);
+      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.renderResults(state.search.result.meals);
     }
   });
 
@@ -89,24 +90,31 @@ class Search {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getInput": () => /* binding */ getInput
+/* harmony export */   "getInput": () => /* binding */ getInput,
+/* harmony export */   "clearInput": () => /* binding */ clearInput,
+/* harmony export */   "clearRecepes": () => /* binding */ clearRecepes,
+/* harmony export */   "renderResults": () => /* binding */ renderResults
 /* harmony export */ });
 /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 
-var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value; // export const clearInput = () => {
-//   elements.searchInput.value = "";
-// };
-// export const clearRecepes = () => {
-//   ////change to while firstchild
-//   elements.searchRecepesList.innerHtml = "";
-// };
-// const renderRecepe = (recepe) => {
-//   const markup = ``;
-//   elements.searchRecepesList.insertAdjacentElement("beforeend", markup);
-// };
-// export const renderResults = (recepes) => {
-//   recepes.forEach(renderRecepe);
-// };
+var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value;
+var clearInput = () => {
+  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value = "";
+};
+var clearRecepes = () => {
+  ////change to while firstchild
+  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.innerHtml = "";
+};
+
+var renderRecepe = recepe => {
+  console.log(recepe);
+  var markup = "<div>".concat(recepe.strMeal, "</div><img src=").concat(recepe.strMealThumb, "/preview alt=").concat(recepe.strMeal, " width=\"200\"><p>").concat(recepe.strInstructions, "</p>");
+  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.insertAdjacentHTML("beforeend", markup);
+};
+
+var renderResults = recepes => {
+  recepes.forEach(renderRecepe);
+};
 
 /***/ }),
 /* 3 */
@@ -117,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "elements": () => /* binding */ elements
 /* harmony export */ });
 var elements = {
-  searchForm: document.querySelector(".search"),
+  searchForm: document.querySelector(".search__form"),
   searchInput: document.querySelector(".search__field"),
   searchRecepesList: document.querySelector(".recepes__list")
 };
