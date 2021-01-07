@@ -24,12 +24,11 @@ var handleSearch = /*#__PURE__*/function () {
     console.log(query);
 
     if (query) {
-      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query);
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearInput();
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearRecepes();
+      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query); // searchView.clearInput();
+      // searchView.clearRecepes();
+
       yield state.search.getResult();
-      console.log(state.search.result);
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.renderResults(state.search.result);
+      console.log(state.search.result); // searchView.renderResults(state.search.result);
     }
   });
 
@@ -53,8 +52,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 class Search {
-  constructor(woeid) {
-    this.woeid = woeid;
+  constructor(query) {
+    this.query = query;
   }
 
   getResult() {
@@ -62,7 +61,9 @@ class Search {
 
     return _asyncToGenerator(function* () {
       try {
-        var res = yield fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=".concat(_this.woeid, "/"));
+        var url = "https://www.themealdb.com/";
+        var key = "9973533";
+        var res = yield fetch("".concat(url, "api/json/v2/").concat(key, "/search.php?s=").concat(_this.query));
         _this.result = yield res.json();
       } catch (error) {
         alert(error);
@@ -71,7 +72,7 @@ class Search {
   } //   async getResult() {
   //     try {
   //       const res = await fetch(
-  //         `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${this.woeid}/`
+  //         `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${this.woeid}`
   //       );
   //       this.result = await res.json();
   //     } catch (error) {
@@ -88,30 +89,24 @@ class Search {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getInput": () => /* binding */ getInput,
-/* harmony export */   "clearInput": () => /* binding */ clearInput,
-/* harmony export */   "clearRecepes": () => /* binding */ clearRecepes,
-/* harmony export */   "renderResults": () => /* binding */ renderResults
+/* harmony export */   "getInput": () => /* binding */ getInput
 /* harmony export */ });
 /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 
-var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value;
-var clearInput = () => {
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value = "";
-};
-var clearRecepes = () => {
-  ////change to while firstchild
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.innerHtml = "";
-};
-
-var renderRecepe = recepe => {
-  var markup = "";
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.insertAdjacentElement("beforeend", markup);
-};
-
-var renderResults = recepes => {
-  recepes.forEach(renderRecepe);
-};
+var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value; // export const clearInput = () => {
+//   elements.searchInput.value = "";
+// };
+// export const clearRecepes = () => {
+//   ////change to while firstchild
+//   elements.searchRecepesList.innerHtml = "";
+// };
+// const renderRecepe = (recepe) => {
+//   const markup = ``;
+//   elements.searchRecepesList.insertAdjacentElement("beforeend", markup);
+// };
+// export const renderResults = (recepes) => {
+//   recepes.forEach(renderRecepe);
+// };
 
 /***/ }),
 /* 3 */

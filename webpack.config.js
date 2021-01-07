@@ -1,4 +1,7 @@
 const path = require("path");
+var fs = require("fs");
+const Dotenv = require("dotenv-webpack");
+
 module.exports = {
   plugins: {
     autoprefixer: { browsers: ["last 2 versions"], grid: true },
@@ -14,6 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js",
   },
+  plugins: [new Dotenv()],
   module: {
     rules: [
       {
