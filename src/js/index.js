@@ -10,6 +10,7 @@ const handleSearch = async (e) => {
   if (query) {
     state.search = new Search(query);
     searchView.clearInput();
+    searchView.clearRecepes();
     await state.search.getResult();
     console.log(state.search.result);
     searchView.renderResults(state.search.result);
