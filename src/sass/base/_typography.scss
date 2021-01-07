@@ -31,3 +31,18 @@ body {
   color: $white-color;
   font-family: "selimaregular";
 }
+@media screen and (max-width: 720px) {
+  .search__title {
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .search__title {
+    font-size: 7rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .search__title {
+    font-size: 4.3rem;
+  }
+}
