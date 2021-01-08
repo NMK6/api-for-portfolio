@@ -16,6 +16,15 @@ body {
   padding: 1.5rem 4rem;
 }
 
+@-webkit-keyframes first-screen-width {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+
 @keyframes first-screen-width {
   0% {
     transform: translate(0);

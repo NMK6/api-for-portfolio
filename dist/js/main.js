@@ -102,7 +102,7 @@ var clearInput = () => {
   _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value = "";
 };
 var clearRecepes = () => {
-  ////change to while firstchild
+  /// /change to while firstchild
   _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.innerHtml = "";
 };
 
@@ -125,6 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "elements": () => /* binding */ elements
 /* harmony export */ });
 var elements = {
+  firstScreen: document.querySelector(".first-screen"),
   searchForm: document.querySelector(".search__form"),
   searchInput: document.querySelector(".search__field"),
   searchRecepesList: document.querySelector(".recepes__list")

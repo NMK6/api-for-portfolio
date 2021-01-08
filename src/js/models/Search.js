@@ -2,6 +2,7 @@ export default class Search {
   constructor(query) {
     this.query = query;
   }
+
   async getResult() {
     try {
       const url = process.env.API_URL;

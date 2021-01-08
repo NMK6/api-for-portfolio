@@ -1,5 +1,4 @@
 const path = require("path");
-var fs = require("fs");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
@@ -56,6 +55,18 @@ module.exports = {
           },
           {
             loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
+            },
           },
           {
             loader: "sass-loader",
