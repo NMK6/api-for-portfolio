@@ -9,26 +9,28 @@
 
   <body>
     <div class="main" class="main">
-      <div class="main__image">
-        <div class="search">
-          <h2 class="search__title">Let's cook</h2>
-          <form class="search__form">
-            <input
-              type="text"
-              class="btn search__field"
-              placeholder="Type a meal..."
-            />
+      <section class="first-screen">
+        <div class="first-screen__image">
+          <div class="search">
+            <h2 class="search__title">Let's cook</h2>
+            <form class="search__form">
+              <input
+                type="text"
+                class="btn search__field"
+                placeholder="Type a meal..."
+              />
 
-            <button class="btn search__btn">
-              <span class="search__icon"></span>Search
-            </button>
-          </form>
+              <button class="btn search__btn">
+                <span class="search__icon"></span>Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
+      <section class="recepes" style="display: none">
+        <div class="recepes__list"></div>
+      </section>
+      <script src="/dist/js/main.js"></script>
     </div>
-    <section class="recepes" style="display: none">
-      <div class="recepes__list"></div>
-    </section>
-    <script src="/dist/js/main.js"></script>
   </body>
 </html>
