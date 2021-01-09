@@ -1,160 +1,66 @@
-/******/ (() => { // webpackBootstrap
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is not neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ([
-/* 0 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/******/ 	var __webpack_modules__ = ({
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _models_Search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _views_searchView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _views_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _img_cooking_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+/***/ "./src/js/index.js":
+/*!*************************!*\
+  !*** ./src/js/index.js ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
-
-
-
-var state = {};
-
-var handleSearch = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator(function* (e) {
-    e.preventDefault();
-    var query = _views_searchView__WEBPACK_IMPORTED_MODULE_1__.getInput();
-    console.log(query);
-
-    if (query) {
-      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query);
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearInput();
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearRecepes();
-      yield state.search.getResult();
-      console.log(state.search.result.meals[0].strMeal);
-      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.renderResults(state.search.result.meals);
-    }
-  });
-
-  return function handleSearch(_x) {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-_views_base__WEBPACK_IMPORTED_MODULE_2__.elements.searchForm.addEventListener("submit", handleSearch);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _models_Search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/Search */ \"./src/js/models/Search.js\");\n/* harmony import */ var _views_searchView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/searchView */ \"./src/js/views/searchView.js\");\n/* harmony import */ var _views_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/base */ \"./src/js/views/base.js\");\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n\n\n\nvar state = {};\n\nvar handleSearch = /*#__PURE__*/function () {\n  var _ref = _asyncToGenerator(function* (e) {\n    e.preventDefault();\n    var query = _views_searchView__WEBPACK_IMPORTED_MODULE_1__.getInput();\n    console.log(query);\n\n    if (query) {\n      state.search = new _models_Search__WEBPACK_IMPORTED_MODULE_0__.default(query);\n      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearInput();\n      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.clearRecepes();\n      yield state.search.getResult();\n      console.log(state.search.result);\n      _views_searchView__WEBPACK_IMPORTED_MODULE_1__.renderResults(state.search.result.meals);\n    }\n  });\n\n  return function handleSearch(_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\n_views_base__WEBPACK_IMPORTED_MODULE_2__.elements.searchForm.addEventListener('submit', handleSearch);\n\n//# sourceURL=webpack://public_html/./src/js/index.js?");
 
 /***/ }),
-/* 1 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ Search
-/* harmony export */ });
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+/***/ "./src/js/models/Search.js":
+/*!*********************************!*\
+  !*** ./src/js/models/Search.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-class Search {
-  constructor(query) {
-    this.query = query;
-  }
-
-  getResult() {
-    var _this = this;
-
-    return _asyncToGenerator(function* () {
-      try {
-        var url = "https://www.themealdb.com/";
-        var key = "9973533";
-        var res = yield fetch("".concat(url, "api/json/v2/").concat(key, "/search.php?s=").concat(_this.query));
-        _this.result = yield res.json();
-      } catch (error) {
-        alert(error);
-      }
-    })();
-  } //   async getResult() {
-  //     try {
-  //       const res = await fetch(
-  //         `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${this.woeid}`
-  //       );
-  //       this.result = await res.json();
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   }
-
-
-}
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Search; }\n/* harmony export */ });\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\nclass Search {\n  constructor(query) {\n    this.query = query;\n  }\n\n  getResult() {\n    var _this = this;\n\n    return _asyncToGenerator(function* () {\n      try {\n        var url = \"https://www.themealdb.com/\";\n        var key = \"9973533\";\n        var res = yield fetch(\"\".concat(url, \"api/json/v2/\").concat(key, \"/search.php?s=\").concat(_this.query));\n        _this.result = yield res.json();\n      } catch (error) {}\n    })();\n  }\n\n}\n\n//# sourceURL=webpack://public_html/./src/js/models/Search.js?");
 
 /***/ }),
-/* 2 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getInput": () => /* binding */ getInput,
-/* harmony export */   "clearInput": () => /* binding */ clearInput,
-/* harmony export */   "clearRecepes": () => /* binding */ clearRecepes,
-/* harmony export */   "renderResults": () => /* binding */ renderResults
-/* harmony export */ });
-/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/***/ "./src/js/views/base.js":
+/*!******************************!*\
+  !*** ./src/js/views/base.js ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value;
-var clearInput = () => {
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value = "";
-};
-var clearRecepes = () => {
-  /// /change to while firstchild
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.innerHtml = "";
-};
-
-var renderRecepe = recepe => {
-  console.log(recepe);
-  var markup = "<div>".concat(recepe.strMeal, "</div><img src=").concat(recepe.strMealThumb, "/preview alt=").concat(recepe.strMeal, " width=\"200\"><p>").concat(recepe.strInstructions, "</p>");
-  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.insertAdjacentHTML("beforeend", markup);
-};
-
-var renderResults = recepes => {
-  recepes.forEach(renderRecepe);
-};
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"elements\": function() { return /* binding */ elements; }\n/* harmony export */ });\nvar elements = {\n  firstScreen: document.querySelector('.first-screen'),\n  searchForm: document.querySelector('.search__form'),\n  searchInput: document.querySelector('.search__field'),\n  searchRecepesList: document.querySelector('.recepes__list')\n};\n\n//# sourceURL=webpack://public_html/./src/js/views/base.js?");
 
 /***/ }),
-/* 3 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "elements": () => /* binding */ elements
-/* harmony export */ });
-var elements = {
-  firstScreen: document.querySelector(".first-screen"),
-  searchForm: document.querySelector(".search__form"),
-  searchInput: document.querySelector(".search__field"),
-  searchRecepesList: document.querySelector(".recepes__list")
-};
+/***/ "./src/js/views/searchView.js":
+/*!************************************!*\
+  !*** ./src/js/views/searchView.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getInput\": function() { return /* binding */ getInput; },\n/* harmony export */   \"clearInput\": function() { return /* binding */ clearInput; },\n/* harmony export */   \"clearRecepes\": function() { return /* binding */ clearRecepes; },\n/* harmony export */   \"renderResults\": function() { return /* binding */ renderResults; }\n/* harmony export */ });\n/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base */ \"./src/js/views/base.js\");\n\nvar getInput = () => _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value;\nvar clearInput = () => {\n  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchInput.value = '';\n};\nvar clearRecepes = () => {\n  /// /change to while firstchild\n  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.innerHtml = '';\n};\n\nvar renderRecepe = recepe => {\n  console.log(recepe);\n  var markup = \"<div>\".concat(recepe.strMeal, \"</div><img src=\").concat(recepe.strMealThumb, \"/preview alt=\").concat(recepe.strMeal, \" width=\\\"200\\\"><p>\").concat(recepe.strInstructions, \"</p>\");\n  _base__WEBPACK_IMPORTED_MODULE_0__.elements.searchRecepesList.insertAdjacentHTML('beforeend', markup);\n};\n\nvar renderResults = recepes => {\n  recepes.forEach(renderRecepe);\n};\n\n//# sourceURL=webpack://public_html/./src/js/views/searchView.js?");
 
 /***/ }),
-/* 4 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/cooking.jpg");
+/***/ "./src/sass/main.scss":
+/*!****************************!*\
+  !*** ./src/sass/main.scss ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/***/ }),
-/* 5 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "css/main.css");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"css/main.css\");\n\n//# sourceURL=webpack://public_html/./src/sass/main.scss?");
 
 /***/ })
-/******/ 	]);
+
+/******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -181,19 +87,19 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 		__webpack_require__.d = function(exports, definition) {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		__webpack_require__.g = (function() {
 /******/ 			if (typeof globalThis === 'object') return globalThis;
 /******/ 			try {
@@ -202,26 +108,26 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				if (typeof window === 'object') return window;
 /******/ 			}
 /******/ 		})();
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
-/******/ 	})();
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
+/******/ 		__webpack_require__.r = function(exports) {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		var scriptUrl;
 /******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
 /******/ 		var document = __webpack_require__.g.document;
@@ -238,13 +144,13 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl + "../";
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__(0);
+/******/ 	__webpack_require__("./src/js/index.js");
 /******/ 	// This entry module used 'exports' so it can't be inlined
-/******/ 	__webpack_require__(5);
+/******/ 	__webpack_require__("./src/sass/main.scss");
 /******/ })()
 ;

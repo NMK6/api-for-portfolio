@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -18,19 +19,23 @@ body {
 
 @-webkit-keyframes first-screen-width {
   0% {
-    transform: translate(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
   100% {
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
   }
 }
 
 @keyframes first-screen-width {
   0% {
-    transform: translate(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
   100% {
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
   }
 }
 @font-face {
@@ -82,20 +87,38 @@ body {
   }
 }
 .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
 }
 .search__title {
   margin-bottom: 2rem;
 }
 .search__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 35rem;
   height: 4.5rem;
   background-color: #f28705;
@@ -103,10 +126,19 @@ body {
 }
 .search__field {
   background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-right: 2rem;
   border: none;
   height: 100%;
@@ -117,10 +149,19 @@ body {
   width: 40%;
   background-color: #f2f2f2;
   border-radius: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .search__icon {
   width: 1rem;
@@ -144,10 +185,12 @@ body {
   height: 2px;
   border-radius: 5px;
   border: 1px solid #424242;
-  transform-origin: top;
+  -webkit-transform-origin: top;
+          transform-origin: top;
   left: 0.6rem;
   top: 0.3rem;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 @media screen and (max-width: 720px) {
@@ -163,7 +206,9 @@ body {
 }
 @media screen and (max-width: 530px) {
   .search__btn {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .search__icon {
     display: none;
@@ -171,7 +216,10 @@ body {
 }
 @media screen and (max-width: 360px) {
   .search__form {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .search__field {
     margin-bottom: 1.5rem;
@@ -188,11 +236,21 @@ body {
   overflow-x: hidden;
 }
 .first-screen__image {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url(../img/cooking.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/cooking.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-position: center bottom;
   background-repeat: no-repeat;
   width: 100%;
