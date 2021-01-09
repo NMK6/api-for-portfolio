@@ -1,7 +1,7 @@
 import Search from "./models/Search";
 import * as searchView from "./views/searchView";
 import { elements } from "./views/base";
-
+import Cooking from "../img/cooking.jpg";
 const state = {};
 const handleSearch = async (e) => {
   e.preventDefault();

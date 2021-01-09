@@ -77,6 +77,33 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|svg)$/i,
+
+        use: [
+          "file-loader?name=img/[name].[ext]",
+
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
 };
