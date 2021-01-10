@@ -7,6 +7,7 @@ export default class Recepe {
     this.cuisine = recepe.strArea;
     this.description = recepe.strInstructions;
     this.link = recepe.strSource;
+    this.video = recepe.strYoutube;
   }
 
   async getIngredients() {
@@ -16,9 +17,9 @@ export default class Recepe {
         const v = this.recepe[`strIngredient${i}`];
         try {
           this.ingredientsImage = await fetch(
-            `https://www.themealdb.com/images/ingredients/${v}.png`
+            `https://www.themealdb.com/images/ingredients/${v}-Small.png`
           );
-          this.ingredientsImage = `https://www.themealdb.com/images/ingredients/${v}.png`;
+          this.ingredientsImage = `https://www.themealdb.com/images/ingredients/${v}-Small.png`;
         } catch {
           this.ingredientsImage = '';
         }
@@ -32,12 +33,12 @@ export default class Recepe {
     }
     return this.ingredients;
   }
-  async getVideoClip() {
-    this.video = await fetch(
-      `https://cors-anywhere.herokuapp.com/${this.recepe.strYoutube}`
-    );
-    console.log(this.video);
-  }
+  // async getVideoClip() {
+  //   this.video = await fetch(
+  //     `https://cors-anywhere.herokuapp.com/${this.recepe.strYoutube}`
+  //   );
+  //   console.log(this.video);
+  // }
   async getImage() {
     this.image = await fetch(this.recepe.strMealThumb);
   }

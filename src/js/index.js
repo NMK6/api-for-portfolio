@@ -17,6 +17,7 @@ const handleSearch = async (e) => {
     state.recepe = new Recepe(state.search.result.meals[0]);
 
     await state.recepe.getIngredients();
+
     searchView.renderResults(state.search.result.meals);
   }
 };
