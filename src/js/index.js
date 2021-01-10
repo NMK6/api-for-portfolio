@@ -13,9 +13,10 @@ const handleSearch = async (e) => {
     searchView.clearInput();
     searchView.clearRecepes();
     await state.search.getResult();
-    console.log(state.search.result);
+
     state.recepe = new Recepe(state.search.result.meals[0]);
-    console.log(state.recepe.getIngredients());
+
+    await state.recepe.getIngredients();
     searchView.renderResults(state.search.result.meals);
   }
 };
