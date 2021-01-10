@@ -1,7 +1,7 @@
 export default class Recepe {
   constructor(recepe) {
     this.recepe = recepe;
-    this.id = recepe.id;
+    this.id = recepe.idMeal;
     this.title = recepe.strMeal;
     this.category = recepe.strCategory;
     this.cuisine = recepe.strArea;
@@ -9,13 +9,15 @@ export default class Recepe {
 
   getIngredients() {
     this.ingredients = [];
-    for (let i = 0; i < 20; i++) {
-      if (this.recepe.strIngredients != '') {
+    for (let i = 1; i < 21; i++) {
+      if (this.recepe[`strIngredient${i}`] != '') {
         this.ingredients.push([
-          `this.recepe.strIngredients${i}`,
-          `this.recepe.strMeasure${i}`,
+          this.recepe[`strIngredient${i}`],
+          this.recepe[`strMeasure${i}`],
         ]);
       }
     }
+
+    return this.ingredients;
   }
 }
