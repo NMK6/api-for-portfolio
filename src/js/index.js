@@ -1,7 +1,8 @@
 import Search from './models/Search';
 import Recepe from './models/Recepe';
-import * as searchView from './views/searchView';
 import { elements } from './views/base';
+import * as searchView from './views/searchView';
+import * as recepeView from './views/recepeView';
 
 const state = {};
 const handleSearch = async (e) => {
@@ -16,8 +17,8 @@ const handleSearch = async (e) => {
 
     state.recepe = new Recepe(state.search.result.meals[0]);
 
-    await state.recepe.getIngredients();
-
+    // console.log(await state.recepe.getIngredients());
+    await recepeView.renderRecepes(state.recepe);
     searchView.renderResults(state.search.result.meals);
   }
 };

@@ -11,4 +11,8 @@
     width: 100%;
     background-size: cover;
   }
+  &__squiz {
+    width: 30%;
+    transition: all 2s ease-in;
+  }
 }
