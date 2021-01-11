@@ -5,15 +5,22 @@ const renderIngredients = async (recepe) => {
   ingredientsContainer.className = 'recepe__ingredients-container';
   const recepeContainer = document.querySelector('.recepe');
   recepeContainer.appendChild(ingredientsContainer);
+  const ingredientsTitleContainer = document.createElement('div');
+  ingredientsTitleContainer.className = 'recepe__ingredients-title-container';
+  const ingredientsTitle = document.createElement('h4');
+  ingredientsTitle.textContent = 'Ingredients';
+  ingredientsTitle.className = 'recepe__ingredients-title';
+  ingredientsTitleContainer.appendChild(ingredientsTitle);
+  ingredientsContainer.appendChild(ingredientsTitleContainer);
   const ingredients = await recepe.getIngredients();
   console.log(ingredients);
   for (let i = 0; i < ingredients.length; i++) {
     const container = document.createElement('div');
-    container.className = 'ingredients-container__conainer';
+    container.className = 'recepe__one-ingredient visually-hidden';
     ingredientsContainer.appendChild(container);
-    const ingredientName = document.createElement('h4');
+    const ingredientName = document.createElement('h5');
     ingredientName.textContent = ingredients[i][0];
-    ingredientName.className = 'recepe__ingredients-title';
+    ingredientName.className = 'recepe__ingredients-name';
     const ingredientMeasure = document.createElement('p');
     ingredientMeasure.textContent = ingredients[i][1];
     ingredientMeasure.className = 'recepe__ingredients-measure';
@@ -32,7 +39,7 @@ export const renderRecepes = (recepe) => {
   <h3 class="recepe__title">${recepe.title}</h3>
   </div>
   </section>`;
-  elements.firstScreen.classList.add('first-screen__squiz');
+
   elements.main.insertAdjacentHTML('beforeend', markup);
   renderIngredients(recepe);
 };

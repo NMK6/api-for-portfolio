@@ -17,3 +17,12 @@ const renderRecepe = (recepe) => {
 export const renderResults = (recepes) => {
   recepes.forEach(renderRecepe);
 };
+export const squeezeFirstscreen = () => {
+  elements.firstScreen.classList.add('first-screen__squeeze');
+  elements.searchContainer.classList.add('search-squeeze');
+  elements.searchForm.classList.add('search-squeeze__form');
+  elements.searchInput.classList.add('search-squeeze__field');
+  elements.searchTitle.classList.add('search-squeeze__title');
+  elements.searchBtn.classList.add('search-squeeze__btn');
+  elements.searchBtnSpan.classList.add('search-squeeze__icon');
+};

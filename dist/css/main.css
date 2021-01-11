@@ -11,11 +11,27 @@ body {
   height: 100vh;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 .main {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
 
 .btn {
@@ -63,6 +79,24 @@ body {
   color: #424242;
 }
 
+h1,
+h3,
+h4,
+h5,
+h6 {
+  color: #f2f2f2;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  font-family: "open_sanslight";
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
 .search__field,
 .search__btn {
   font-size: 1.1rem;
@@ -73,9 +107,16 @@ body {
 
 .search__title {
   font-size: 12rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #f2f2f2;
   font-family: "selimaregular";
+}
+
+.search-squeeze__title {
+  font-size: 4.5rem;
+  font-weight: 400;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 @media screen and (max-width: 720px) {
@@ -93,6 +134,13 @@ body {
     font-size: 4.3rem;
   }
 }
+.recepe__title {
+  font-size: 2rem;
+}
+.recepe__ingredients-title {
+  color: #314035;
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,6 +285,33 @@ body {
     width: 100%;
   }
 }
+.search-squeeze {
+  padding: 2rem;
+}
+.search-squeeze__form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+}
+.search-squeeze__field {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+.search-squeeze__btn {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.search-squeeze__icon {
+  display: none;
+}
+
 .recepe {
   color: white;
   display: -webkit-box;
@@ -252,6 +327,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  width: 100%;
 }
 .recepe__title {
   margin-bottom: 2rem;
@@ -270,19 +346,31 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-.recepe__ingredients-title {
-  margin-bottom: 1rem;
+.recepe__ingredients-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 5rem;
+  background-color: #83a603;
+  top: 0;
+  left: 0;
+  height: 100vh;
 }
-.recepe__ingredients-measure {
-  margin-bottom: 0.5rem;
-}
-.recepe__ingredients-img {
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg);
-}
-
-.ingredients-container__conainer {
+.recepe__one-ingredient {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,9 +384,20 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-right: 1.5rem;
+  width: 8rem;
+  margin-bottom: 3rem;
 }
-
+.recepe__ingredients-title {
+  margin-bottom: 0.8rem;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.recepe__ingredients-name {
+  margin-bottom: 0.8rem;
+}
+.recepe__ingredients-measure {
+  margin-bottom: 0.5rem;
+}
 .first-screen {
   width: 100%;
   height: 100vh;
@@ -325,7 +424,7 @@ body {
   width: 100%;
   background-size: cover;
 }
-.first-screen__squiz {
+.first-screen__squeeze {
   width: 30%;
   -webkit-transition: all 2s ease-in;
   transition: all 2s ease-in;
@@ -333,7 +432,7 @@ body {
 
 .second-screen {
   width: 60%;
-  padding: 2rem 3rem;
+  padding: 2rem 4rem 2rem 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,4 +447,5 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   overflow-x: hidden;
+  position: relative;
 }

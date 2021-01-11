@@ -1,35 +1,58 @@
 @font-face {
-  font-family: "selimaregular";
-  src: url("./fonts/selima_-webfont.woff2") format("woff2"),
-    url("./fonts/selima_-webfont.woff") format("woff");
+  font-family: 'selimaregular';
+  src: url('./fonts/selima_-webfont.woff2') format('woff2'),
+    url('./fonts/selima_-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "open_sanslight";
-  src: url("./fonts/opensanslight-2yxe-webfont.woff2") format("woff2"),
-    url(".fotns/opensanslight-2yxe-webfont.woff") format("woff");
+  font-family: 'open_sanslight';
+  src: url('./fonts/opensanslight-2yxe-webfont.woff2') format('woff2'),
+    url('.fotns/opensanslight-2yxe-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   font-size: 16px;
-  font-family: "open_sanslight";
+  font-family: 'open_sanslight';
   color: $black-color;
 }
+h1,
+h3,
+h4,
+h5,
+h6 {
+  color: $white-color;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  font-family: 'open_sanslight';
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
 .search__field,
 .search__btn {
   font-size: 1.1rem;
-  font-family: "open_sanslight";
+  font-family: 'open_sanslight';
   font-weight: 100;
   color: $black-color;
 }
 .search__title {
   font-size: 12rem;
-  font-weight: bold;
+  font-weight: 700;
   color: $white-color;
-  font-family: "selimaregular";
+  font-family: 'selimaregular';
+}
+.search-squeeze__title {
+  font-size: 4.5rem;
+  font-weight: 400;
+  transition: all 0.5s ease-in;
 }
 @media screen and (max-width: 720px) {
   .search__title {
@@ -44,5 +67,13 @@ body {
 @media screen and (max-width: 360px) {
   .search__title {
     font-size: 4.3rem;
+  }
+}
+.recepe {
+  &__title {
+    font-size: 2rem;
+  }
+  &__ingredients-title {
+    color: $primary-color;
   }
 }

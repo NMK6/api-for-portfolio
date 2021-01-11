@@ -18,6 +18,7 @@ const handleSearch = async (e) => {
     state.recepe = new Recepe(state.search.result.meals[0]);
 
     // console.log(await state.recepe.getIngredients());
+    searchView.squeezeFirstscreen();
     await recepeView.renderRecepes(state.recepe);
     searchView.renderResults(state.search.result.meals);
   }

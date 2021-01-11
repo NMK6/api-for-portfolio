@@ -9,7 +9,7 @@
     @include row-flex-center(space-between, row, center);
     width: 35rem;
     height: 4.5rem;
-    background-color: #f28705;
+    background-color: $orange-color;
     border-radius: 3rem;
   }
   &__field {
@@ -90,5 +90,26 @@
     &__btn {
       width: 100%;
     }
+  }
+}
+.search-squeeze {
+  padding: 2rem;
+  &__form {
+    flex-direction: column;
+    width: auto;
+  }
+  &__field {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+  &__btn {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+  }
+  &__icon {
+    display: none;
   }
 }
