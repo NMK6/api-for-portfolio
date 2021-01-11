@@ -1,6 +1,24 @@
-.second-screen {
-  width: 60%;
-}
 .recepe {
   color: white;
+  @include row-flex-center(space-between, column, flex-start);
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__ingredients-container {
+    @include row-flex-center(space-between, row, flex-start);
+  }
+  &__ingredients-title {
+    margin-bottom: 1rem;
+  }
+  &__ingredients-measure {
+    margin-bottom: 0.5rem;
+  }
+  &__ingredients-img {
+    transform: rotate(10deg);
+  }
+}
+.ingredients-container__conainer {
+  @include row-flex-center(space-between, column, flex-start);
+  margin-right: 1.5rem;
 }

@@ -5,7 +5,7 @@
   &__image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url(../img/cooking.jpg);
-    @include row-flex-center(center, column);
+    @include row-flex-center(center, column, center);
     background-position: center bottom;
     background-repeat: no-repeat;
     width: 100%;
@@ -15,4 +15,10 @@
     width: 30%;
     transition: all 2s ease-in;
   }
+}
+.second-screen {
+  width: 60%;
+  padding: 2rem 3rem;
+  @include row-flex-center(stretch, column, flex-start);
+  overflow-x: hidden;
 }
