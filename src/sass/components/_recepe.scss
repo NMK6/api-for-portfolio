@@ -37,4 +37,10 @@
   }
   &__ingredients-img {
   }
+  &__instructions-container {
+    @include row-flex-center(space-between, column, flex-start);
+  }
+  &__instructions-p {
+    padding-bottom: 1rem;
+  }
 }

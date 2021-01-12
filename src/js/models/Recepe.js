@@ -5,11 +5,21 @@ export default class Recepe {
     this.title = recepe.strMeal;
     this.category = recepe.strCategory;
     this.cuisine = recepe.strArea;
-    this.description = recepe.strInstructions;
-    this.link = recepe.strSource;
-    this.video = recepe.strYoutube;
-  }
 
+    this.link = recepe.strSource;
+  }
+  getInstructions() {
+    const instructions = this.recepe.strInstructions;
+    const res = instructions.split(`STEP `);
+    this.description = res;
+    return this.description;
+  }
+  getVideo() {
+    const video = this.recepe.strYoutube;
+    this.video = video.replace('watch?v=', 'embed/');
+    console.log(this.video);
+    return this.video;
+  }
   async getIngredients() {
     this.ingredients = [];
     for (let i = 1; i < 21; i++) {
