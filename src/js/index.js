@@ -10,9 +10,11 @@ const handleSearch = async (e) => {
   const query = searchView.getInput();
   console.log(query);
   if (query) {
+    recepeView.clearRecepe();
     state.search = new Search(query);
     searchView.clearInput();
     searchView.clearRecepes();
+
     await state.search.getResult();
 
     state.recepe = new Recepe(state.search.result.meals[0]);

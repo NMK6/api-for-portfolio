@@ -52,16 +52,29 @@ const renderInstructions = (recepe, parent) => {
 export const renderRecepes = async (recepe) => {
   const video = await recepe.getVideo();
   const instructions = await recepe.getInstructions();
-  const markup = `<section class="second-screen">
-  <div class="recepe">
+  if (!document.querySelector('.second-screen')) {
+    const secondScreen = document.createElement('section');
+    secondScreen.className = 'second-screen';
+    elements.main.appendChild(secondScreen);
+  }
+  const markup = `<div class='recepe'>
   <h3 class="recepe__title">${recepe.title}</h3>
- 
-  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p>Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Category: ${recepe.category}</p></div></div>
+  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p>Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
   </div>
-  </section>`;
+  `;
 
-  elements.main.insertAdjacentHTML('beforeend', markup);
+  const secondScreen = document.querySelector('.second-screen');
+
+  secondScreen.insertAdjacentHTML('beforeend', markup);
   const recepeContainer = document.querySelector('.recepe');
   renderIngredients(recepe, recepeContainer);
   renderInstructions(instructions, recepeContainer);
+};
+export const clearRecepe = () => {
+  if (document.querySelector('.second-screen')) {
+    const secondScreen = document.querySelector('.second-screen');
+    while (secondScreen.firstChild) {
+      secondScreen.removeChild(secondScreen.firstChild);
+    }
+  }
 };

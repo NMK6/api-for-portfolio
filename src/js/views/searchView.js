@@ -5,7 +5,6 @@ export const clearInput = () => {
   elements.searchInput.value = '';
 };
 export const clearRecepes = () => {
-  /// /change to while firstchild
   elements.searchRecepesList.innerHtml = '';
 };
 

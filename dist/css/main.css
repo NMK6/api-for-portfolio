@@ -475,7 +475,7 @@ a:hover {
   background-size: cover;
 }
 .first-screen__squeeze {
-  width: 52rem;
+  min-width: 18rem;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
