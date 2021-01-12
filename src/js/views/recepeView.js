@@ -35,6 +35,10 @@ const renderIngredients = async (recepe, parent) => {
 const renderInstructions = (recepe, parent) => {
   const instructionsContainer = document.createElement('div');
   instructionsContainer.className = 'recepe__instructions-container';
+  const title = document.createElement('h4');
+  title.textContent = 'Instructions';
+  title.className = 'recepe__instructions-title';
+  instructionsContainer.appendChild(title);
   parent.appendChild(instructionsContainer);
   for (let i = 0; i < recepe.length; i++) {
     if (recepe != '') {
@@ -52,7 +56,7 @@ export const renderRecepes = async (recepe) => {
   <div class="recepe">
   <h3 class="recepe__title">${recepe.title}</h3>
  
-  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe></div>
+  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p>Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Category: ${recepe.category}</p></div></div>
   </div>
   </section>`;
 

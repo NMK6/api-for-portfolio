@@ -37,8 +37,19 @@
   }
   &__ingredients-img {
   }
+  &__video-container {
+    @include row-flex-center(space-between, row, flex-start);
+    width: 100%;
+  }
+  &__video {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
   &__instructions-container {
     @include row-flex-center(space-between, column, flex-start);
+  }
+  &__instructions-container {
+    margin-bottom: 1rem;
   }
   &__instructions-p {
     padding-bottom: 1rem;

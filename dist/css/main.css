@@ -406,6 +406,26 @@ a:hover {
 .recepe__ingredients-measure {
   margin-bottom: 0.5rem;
 }
+.recepe__video-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+.recepe__video {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
 .recepe__instructions-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -420,6 +440,9 @@ a:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+.recepe__instructions-container {
+  margin-bottom: 1rem;
 }
 .recepe__instructions-p {
   padding-bottom: 1rem;
@@ -452,13 +475,13 @@ a:hover {
   background-size: cover;
 }
 .first-screen__squeeze {
-  width: 30%;
+  width: 52rem;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 
 .second-screen {
-  width: 60%;
+  width: auto;
   padding: 2rem 4rem 2rem 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
