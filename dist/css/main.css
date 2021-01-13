@@ -91,9 +91,9 @@ h4,
 h5,
 h6 {
   color: #f2f2f2;
-  line-height: 1.2;
+  line-height: 1.6;
   font-weight: 100;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-family: "open_sanslight";
   font-family: "shanttyshantty";
 }
@@ -144,9 +144,14 @@ a:hover {
 }
 .recepe__title {
   font-size: 4.5rem;
+  font-family: "selimaregular";
 }
 .recepe__ingredients-title {
-  color: #314035;
+  color: #83a603;
+}
+.recepe__ingredients-name {
+  font-size: 1.3rem;
+  font-family: "open_sanslight";
 }
 
 .search {
@@ -336,11 +341,47 @@ a:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  padding: 3rem;
+}
+.recepe__title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  background-color: #83a603;
+  height: 100vh;
 }
 .recepe__title {
   margin-bottom: 2rem;
 }
 .recepe__ingredients-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.recepe__ingredient-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,27 +397,6 @@ a:hover {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-.recepe__ingredients-title-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  width: 5rem;
-  background-color: #83a603;
-  top: 0;
-  left: 0;
-  height: 100vh;
 }
 .recepe__one-ingredient {
   display: -webkit-box;
@@ -397,8 +417,6 @@ a:hover {
 }
 .recepe__ingredients-title {
   margin-bottom: 0.8rem;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
 }
 .recepe__ingredients-name {
   margin-bottom: 0.8rem;
@@ -482,14 +500,13 @@ a:hover {
 
 .second-screen {
   width: auto;
-  padding: 2rem 4rem 2rem 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;

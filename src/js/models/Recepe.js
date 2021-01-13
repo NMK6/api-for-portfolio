@@ -5,8 +5,8 @@ export default class Recepe {
     this.title = recepe.strMeal;
     this.category = recepe.strCategory;
     this.cuisine = recepe.strArea;
-
     this.link = recepe.strSource;
+    this.image = recepe.strMealThumb;
   }
   getInstructions() {
     const instructions = this.recepe.strInstructions;
@@ -17,7 +17,7 @@ export default class Recepe {
   getVideo() {
     const video = this.recepe.strYoutube;
     this.video = video.replace('watch?v=', 'embed/');
-    console.log(this.video);
+
     return this.video;
   }
   async getIngredients() {

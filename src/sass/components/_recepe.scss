@@ -2,22 +2,25 @@
   color: white;
   @include row-flex-center(space-between, column, flex-start);
   width: 100%;
-
+  padding: 3rem;
+  &__title-container {
+    @include row-flex-center(center, row, center);
+    width: 5rem;
+    background-color: $green-color;
+    height: 100vh;
+  }
   &__title {
     margin-bottom: 2rem;
   }
   &__ingredients-container {
-    @include row-flex-center(space-between, row, flex-start);
+    @include row-flex-center(space-between, column, flex-start);
     flex-wrap: wrap;
   }
   &__ingredients-title-container {
-    @include row-flex-center(center, row, center);
-    position: absolute;
-    width: 5rem;
-    background-color: $green-color;
-    top: 0;
-    left: 0;
-    height: 100vh;
+  }
+  &__ingredient-container {
+    @include row-flex-center(space-between, row, flex-start);
+    flex-wrap: wrap;
   }
   &__one-ingredient {
     @include row-flex-center(space-between, column, flex-start);
@@ -27,7 +30,6 @@
 
   &__ingredients-title {
     margin-bottom: 0.8rem;
-    transform: rotate(-90deg);
   }
   &__ingredients-name {
     margin-bottom: 0.8rem;

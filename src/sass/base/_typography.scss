@@ -31,9 +31,9 @@ h4,
 h5,
 h6 {
   color: $white-color;
-  line-height: 1.2;
+  line-height: 1.6;
   font-weight: 100;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-family: 'open_sanslight';
   font-family: 'shanttyshantty';
 }
@@ -81,8 +81,13 @@ a:hover {
 .recepe {
   &__title {
     font-size: 4.5rem;
+    font-family: 'selimaregular';
   }
   &__ingredients-title {
-    color: $primary-color;
+    color: $green-color;
+  }
+  &__ingredients-name {
+    font-size: 1.3rem;
+    font-family: 'open_sanslight';
   }
 }

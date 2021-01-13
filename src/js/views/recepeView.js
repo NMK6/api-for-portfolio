@@ -12,11 +12,14 @@ const renderIngredients = async (recepe, parent) => {
   ingredientsTitle.className = 'recepe__ingredients-title';
   ingredientsTitleContainer.appendChild(ingredientsTitle);
   ingredientsContainer.appendChild(ingredientsTitleContainer);
+  const ingredientContainer = document.createElement('div');
+  ingredientContainer.className = 'recepe__ingredient-container';
+  ingredientsContainer.appendChild(ingredientContainer);
   const ingredients = await recepe.getIngredients();
   for (let i = 0; i < ingredients.length; i++) {
     const container = document.createElement('div');
-    container.className = 'recepe__one-ingredient visually-hidden';
-    ingredientsContainer.appendChild(container);
+    container.className = 'recepe__one-ingredient';
+    ingredientContainer.appendChild(container);
     const ingredientName = document.createElement('h5');
     ingredientName.textContent = ingredients[i][0];
     ingredientName.className = 'recepe__ingredients-name';
@@ -51,15 +54,16 @@ const renderInstructions = (recepe, parent) => {
 };
 export const renderRecepes = async (recepe) => {
   const video = await recepe.getVideo();
+
   const instructions = await recepe.getInstructions();
   if (!document.querySelector('.second-screen')) {
     const secondScreen = document.createElement('section');
     secondScreen.className = 'second-screen';
     elements.main.appendChild(secondScreen);
   }
-  const markup = `<div class='recepe'>
+  const markup = `<div class="recepe__title-container"></div><div class='recepe'>
   <h3 class="recepe__title">${recepe.title}</h3>
-  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p>Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
+  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
   </div>
   `;
 
@@ -70,6 +74,7 @@ export const renderRecepes = async (recepe) => {
   renderIngredients(recepe, recepeContainer);
   renderInstructions(instructions, recepeContainer);
 };
+
 export const clearRecepe = () => {
   if (document.querySelector('.second-screen')) {
     const secondScreen = document.querySelector('.second-screen');

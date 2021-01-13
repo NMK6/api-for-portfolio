@@ -18,8 +18,7 @@
 }
 .second-screen {
   width: auto;
-  padding: 2rem 4rem 2rem 8rem;
-  @include row-flex-center(stretch, column, flex-start);
+  @include row-flex-center(stretch, row, flex-start);
   overflow-x: hidden;
   position: relative;
 }
