@@ -24,12 +24,26 @@
   }
   &__one-ingredient {
     @include row-flex-center(space-between, column, flex-start);
-    width: 8rem;
-    margin-bottom: 3rem;
+    width: 10rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: transparent;
+      width: 6rem;
+      height: 6rem;
+      z-index: -1;
+      border-radius: 3px;
+      border: 6px solid #5a7302;
+    }
   }
 
   &__ingredients-title {
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
   }
   &__ingredients-name {
     margin-bottom: 0.8rem;
@@ -42,6 +56,7 @@
   &__video-container {
     @include row-flex-center(space-between, row, flex-start);
     width: 100%;
+    margin-bottom: 0.5rem;
   }
   &__video {
     margin-right: 2rem;

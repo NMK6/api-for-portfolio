@@ -412,11 +412,24 @@ a:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 8rem;
-  margin-bottom: 3rem;
+  width: 10rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.recepe__one-ingredient::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: transparent;
+  width: 6rem;
+  height: 6rem;
+  z-index: -1;
+  border-radius: 3px;
+  border: 6px solid #5a7302;
 }
 .recepe__ingredients-title {
-  margin-bottom: 0.8rem;
+  margin-bottom: 2rem;
 }
 .recepe__ingredients-name {
   margin-bottom: 0.8rem;
@@ -439,6 +452,7 @@ a:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 .recepe__video {
   margin-right: 2rem;
