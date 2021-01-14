@@ -21,6 +21,16 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .visually-hidden {
@@ -361,6 +371,21 @@ a:hover {
   background-color: #83a603;
   height: 100vh;
 }
+.recepe__sections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .recepe__titles {
   width: 100%;
   height: 11rem;
@@ -386,6 +411,8 @@ a:hover {
 .recepe__titles-span {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  text-transform: capitalize;
+  padding: 1.5rem 2rem;
 }
 .recepe__title {
   margin-bottom: 2rem;
@@ -467,10 +494,10 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -508,7 +535,7 @@ a:hover {
 
 .first-screen {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
 }
 .first-screen__image {
@@ -533,13 +560,12 @@ a:hover {
   background-size: cover;
 }
 .first-screen__squeeze {
-  min-width: 18rem;
+  width: 40%;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 
 .second-screen {
-  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -555,4 +581,6 @@ a:hover {
           align-items: flex-start;
   overflow-x: hidden;
   position: relative;
+  width: 60%;
+  max-height: 100vh;
 }

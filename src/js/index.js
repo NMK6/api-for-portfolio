@@ -22,6 +22,9 @@ const handleSearch = async (e) => {
     searchView.squeezeFirstscreen();
     await recepeView.renderRecepes(state.recepe);
     searchView.renderResults(state.search.result.meals);
+    document
+      .querySelector('.recepe__title-container')
+      .addEventListener('click', recepeView.showRecepesSection);
   }
 };
 elements.searchForm.addEventListener('submit', handleSearch);

@@ -9,6 +9,9 @@
     background-color: $green-color;
     height: 100vh;
   }
+  &__sections {
+    @include row-flex-center(flex-start, column, center);
+  }
   &__titles {
     width: 100%;
     height: 11rem;
@@ -19,6 +22,8 @@
   }
   &__titles-span {
     transform: rotate(-90deg);
+    text-transform: capitalize;
+    padding: 1.5rem 2rem;
   }
   &__title {
     margin-bottom: 2rem;
@@ -65,7 +70,7 @@
   &__ingredients-img {
   }
   &__video-container {
-    @include row-flex-center(space-between, row, flex-start);
+    @include row-flex-center(space-between, column, flex-start);
     width: 100%;
     margin-bottom: 0.5rem;
   }

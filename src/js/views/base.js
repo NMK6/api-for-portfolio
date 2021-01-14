@@ -1,4 +1,6 @@
 export const elements = {
+  width: window.innerWidth,
+  height: window.innerHeight,
   main: document.querySelector('.main'),
   firstScreen: document.querySelector('.first-screen'),
   searchContainer: document.querySelector('.search'),
