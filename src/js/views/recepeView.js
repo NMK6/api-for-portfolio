@@ -61,7 +61,7 @@ export const renderRecepes = async (recepe) => {
     secondScreen.className = 'second-screen';
     elements.main.appendChild(secondScreen);
   }
-  const markup = `<div class="recepe__title-container"></div><div class='recepe'>
+  const markup = `<div class="recepe__title-container"><p class="recepe__titles recepe__titles--one"><span class="recepe__titles-span">Ingredients</span></p><p class="recepe__titles recepe__titles--two"><span class="recepe__titles-span">Instruction</span></p><p class="recepe__titles recepe__titles--three"><span class="recepe__titles-span">Video</span></p></div><div class='recepe'>
   <h3 class="recepe__title">${recepe.title}</h3>
   <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width="auto" height="auto" frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
   </div>

@@ -146,12 +146,12 @@ a:hover {
   font-size: 4.5rem;
   font-family: "selimaregular";
 }
-.recepe__ingredients-title {
-  color: #83a603;
-}
 .recepe__ingredients-name {
   font-size: 1.3rem;
   font-family: "open_sanslight";
+}
+.recepe__titles-span {
+  font-size: 1.1rem;
 }
 
 .search {
@@ -347,6 +347,31 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  background-color: #83a603;
+  height: 100vh;
+}
+.recepe__titles {
+  width: 100%;
+  height: 11rem;
+  border-bottom-left-radius: 30px;
+  -webkit-box-shadow: 0 0 15px #314035;
+          box-shadow: 0 0 15px #314035;
+  -webkit-clip-path: inset(0px 0px -15px 0px);
+          clip-path: inset(0px 0px -15px 0px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -357,9 +382,10 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 5rem;
-  background-color: #83a603;
-  height: 100vh;
+}
+.recepe__titles-span {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 .recepe__title {
   margin-bottom: 2rem;
@@ -389,9 +415,9 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;

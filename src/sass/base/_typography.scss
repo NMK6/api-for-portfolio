@@ -83,11 +83,12 @@ a:hover {
     font-size: 4.5rem;
     font-family: 'selimaregular';
   }
-  &__ingredients-title {
-    color: $green-color;
-  }
+
   &__ingredients-name {
     font-size: 1.3rem;
     font-family: 'open_sanslight';
+  }
+  &__titles-span {
+    font-size: 1.1rem;
   }
 }
