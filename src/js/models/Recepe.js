@@ -10,7 +10,7 @@ export default class Recepe {
   }
   getInstructions() {
     const instructions = this.recepe.strInstructions;
-    const res = instructions.split(`STEP `);
+    const res = instructions.split('STEP');
     this.description = res;
     return this.description;
   }
@@ -43,12 +43,7 @@ export default class Recepe {
     }
     return this.ingredients;
   }
-  // async getVideoClip() {
-  //   this.video = await fetch(
-  //     `https://cors-anywhere.herokuapp.com/${this.recepe.strYoutube}`
-  //   );
-  //   console.log(this.video);
-  // }
+
   async getImage() {
     this.image = await fetch(this.recepe.strMealThumb);
   }

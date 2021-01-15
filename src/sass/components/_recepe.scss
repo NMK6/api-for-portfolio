@@ -2,12 +2,13 @@
   color: white;
   @include row-flex-center(space-between, column, flex-start);
   width: 100%;
-  padding: 3rem;
+  padding: 4rem 5rem;
   &__title-container {
     @include row-flex-center(stretch, column, stretch);
     width: 5rem;
     background-color: $green-color;
     height: 100vh;
+    padding-top: 4.5rem;
   }
   &__sections {
     @include row-flex-center(flex-start, column, center);
@@ -34,6 +35,10 @@
     flex-wrap: wrap;
   }
   &__ingredients-title-container {
+  }
+  &__image {
+    border-top-right-radius: 50%;
+    margin-bottom: 1rem;
   }
   &__ingredient-container {
     @include row-flex-center(left, row, flex-start);

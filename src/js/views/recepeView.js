@@ -37,14 +37,20 @@ const renderIngredients = async (recepe, parent) => {
     container.appendChild(ingredientImage);
   }
 };
-const renderInstructions = (recepe, parent) => {
+const renderInstructions = async (recepe, parent, arr) => {
   const instructionsContainer = document.createElement('div');
   instructionsContainer.className =
     'recepe__instructions-container visually-hidden';
   const title = document.createElement('h4');
   title.textContent = 'Instructions';
-  title.className = 'recepe__instructions-title';
+  title.className = 'recepe__instructions-title visually-hidden';
   instructionsContainer.appendChild(title);
+  const image = document.createElement('img');
+  image.width = elements.width / 2.2;
+  image.className = 'recepe__image';
+  image.alt = recepe.title;
+  image.src = await `${arr.image}`;
+  instructionsContainer.appendChild(image);
   parent.appendChild(instructionsContainer);
   for (let i = 0; i < recepe.length; i++) {
     if (recepe != '') {
@@ -103,12 +109,12 @@ export const renderRecepes = async (recepe) => {
   let iHeight = '';
   elements.widht > 1500
     ? (iWidth = 853)
-    : elements.width > 1000
+    : elements.width > 1300
     ? (iWidth = 640)
     : (iWidth = 560);
   elements.height > 1500
     ? (iHeight = 505)
-    : elements.width > 1000
+    : elements.width > 1300
     ? (iHeight = 385)
     : (iHeight = 340);
 
@@ -123,7 +129,7 @@ export const renderRecepes = async (recepe) => {
   secondScreen.insertAdjacentHTML('beforeend', markup);
   const recepeContainer = document.querySelector('.recepe__sections');
   renderIngredients(recepe, recepeContainer);
-  renderInstructions(instructions, recepeContainer);
+  renderInstructions(instructions, recepeContainer, recepe);
 };
 
 export const clearRecepe = () => {

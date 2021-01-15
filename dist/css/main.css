@@ -351,7 +351,7 @@ a:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
-  padding: 3rem;
+  padding: 4rem 5rem;
 }
 .recepe__title-container {
   display: -webkit-box;
@@ -370,6 +370,7 @@ a:hover {
   width: 5rem;
   background-color: #83a603;
   height: 100vh;
+  padding-top: 4.5rem;
 }
 .recepe__sections {
   display: -webkit-box;
@@ -434,6 +435,10 @@ a:hover {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.recepe__image {
+  border-top-right-radius: 50%;
+  margin-bottom: 1rem;
 }
 .recepe__ingredient-container {
   display: -webkit-box;
