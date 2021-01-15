@@ -84,6 +84,11 @@ export const renderRecepes = async (recepe) => {
     const titlesContainer = document.createElement('div');
     titlesContainer.className = 'recepe__title-container';
     elements.main.appendChild(titlesContainer);
+    const titles = `<p class="recepe__titles recepe__titles--one"><span class="recepe__titles-span">ingredients</span></p><p class="recepe__titles recepe__titles--two"><span class="recepe__titles-span">instructions</span></p><p class="recepe__titles recepe__titles--three"><span class="recepe__titles-span">video</span></p>`;
+
+    document
+      .querySelector('.recepe__title-container')
+      .insertAdjacentHTML('beforeend', titles);
   }
 
   const video = await recepe.getVideo();
@@ -107,11 +112,6 @@ export const renderRecepes = async (recepe) => {
     ? (iHeight = 385)
     : (iHeight = 340);
 
-  const titles = `<p class="recepe__titles recepe__titles--one"><span class="recepe__titles-span">ingredients</span></p><p class="recepe__titles recepe__titles--two"><span class="recepe__titles-span">instructions</span></p><p class="recepe__titles recepe__titles--three"><span class="recepe__titles-span">video</span></p>`;
-
-  document
-    .querySelector('.recepe__title-container')
-    .insertAdjacentHTML('beforeend', titles);
   const markup = `<div class='recepe'>
   <h3 class="recepe__title">${recepe.title}</h3><div class="recepe__sections">
   <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width=${iWidth} height=${iHeight} frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
