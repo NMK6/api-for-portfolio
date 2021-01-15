@@ -23,7 +23,7 @@
 body {
   font-size: 16px;
   font-family: 'open_sanslight';
-  color: $black-color;
+  color: $white-color;
 }
 h1,
 h3,
@@ -90,5 +90,13 @@ a:hover {
   }
   &__titles-span {
     font-size: 1.1rem;
+    color: $primary-color;
+  }
+
+  &__arrow-left::before,
+  &__arrow-right::before {
+    font-size: 6rem;
+    color: $orange-color;
+    font-family: 'selimaregular';
   }
 }
