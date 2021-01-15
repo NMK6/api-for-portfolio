@@ -5,3 +5,5 @@
 <img src="/cooking__second-screen-ingredients.png" width="500">
 <h2>Second screeen - video</h2>
 <img src="/cooking__second-screen-video.png" width="500">
+<h2>Second screeen - image</h2>
+<img src="/cooking__second-screen-imaage.png" width="500">
