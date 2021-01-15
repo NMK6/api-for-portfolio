@@ -6,4 +6,4 @@
 <h2>Second screeen - video</h2>
 <img src="/cooking__second-screen-video.png" width="500">
 <h2>Second screeen - image</h2>
-<img src="/cooking__second-screen-imaage.png" width="500">
+<img src="/cooking__second-screen-image.png" width="500">
