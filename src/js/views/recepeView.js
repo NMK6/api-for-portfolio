@@ -7,7 +7,8 @@ const renderIngredients = async (recepe, parent) => {
 
   parent.appendChild(ingredientsContainer);
   const ingredientsTitleContainer = document.createElement('div');
-  ingredientsTitleContainer.className = 'recepe__ingredients-title-container';
+  ingredientsTitleContainer.className =
+    'recepe__ingredients-title-container visually-hidden';
   const ingredientsTitle = document.createElement('h4');
   ingredientsTitle.textContent = 'Ingredients';
   ingredientsTitle.className = 'recepe__ingredients-title';
@@ -79,6 +80,12 @@ export const showRecepesSection = (e) => {
   }
 };
 export const renderRecepes = async (recepe) => {
+  if (!document.querySelector('.recepe__title-container')) {
+    const titlesContainer = document.createElement('div');
+    titlesContainer.className = 'recepe__title-container';
+    elements.main.appendChild(titlesContainer);
+  }
+
   const video = await recepe.getVideo();
 
   const instructions = await recepe.getInstructions();
@@ -99,7 +106,13 @@ export const renderRecepes = async (recepe) => {
     : elements.width > 1000
     ? (iHeight = 385)
     : (iHeight = 340);
-  const markup = `<div class="recepe__title-container"><p class="recepe__titles recepe__titles--one"><span class="recepe__titles-span">ingredients</span></p><p class="recepe__titles recepe__titles--two"><span class="recepe__titles-span">instructions</span></p><p class="recepe__titles recepe__titles--three"><span class="recepe__titles-span">video</span></p></div><div class='recepe'>
+
+  const titles = `<p class="recepe__titles recepe__titles--one"><span class="recepe__titles-span">ingredients</span></p><p class="recepe__titles recepe__titles--two"><span class="recepe__titles-span">instructions</span></p><p class="recepe__titles recepe__titles--three"><span class="recepe__titles-span">video</span></p>`;
+
+  document
+    .querySelector('.recepe__title-container')
+    .insertAdjacentHTML('beforeend', titles);
+  const markup = `<div class='recepe'>
   <h3 class="recepe__title">${recepe.title}</h3><div class="recepe__sections">
   <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width=${iWidth} height=${iHeight} frameborder="0"></iframe><div class="recepe__info-container><p class="recepe__info-p>Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p><p class="recepe__info-p>Ingredients: ${recepe.cuisine}</p></div></div>
   </div></div>
