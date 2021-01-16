@@ -31,16 +31,30 @@ const handleSearch = async (e) => {
 
 elements.searchForm.addEventListener('submit', handleSearch);
 
-// document
-//   .querySelector('.recepe__arrows-container')
 document.addEventListener('click', async (e) => {
   e.preventDefault;
-  console.log(e.target.classList);
-  if (e.target.classList.contains('recepe__arrow-right')) {
-    state.index++;
+
+  if (
+    e.target.classList.contains('recepe__arrow-right') ||
+    e.target.classList.contains('recepe__arrow-left')
+  ) {
+    state.max = state.search.result.meals.length;
+    if (e.target.classList.contains('recepe__arrow-right')) {
+      if (state.index < state.max - 1) {
+        state.index++;
+      } else {
+        state.index = 0;
+      }
+    }
+    if (e.target.classList.contains('recepe__arrow-left')) {
+      if (state.index > 0) {
+        state.index--;
+      } else {
+        state.index = state.max - 1;
+      }
+    }
     state.recepe = new Recepe(state.search.result.meals[state.index]);
     recepeView.clearRecepe();
     await recepeView.renderRecepes(state.recepe);
-    console.log(state.recepe);
   }
 });

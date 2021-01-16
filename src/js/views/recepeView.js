@@ -39,8 +39,7 @@ const renderIngredients = async (recepe, parent) => {
 };
 const renderInstructions = async (recepe, parent, arr) => {
   const instructionsContainer = document.createElement('div');
-  instructionsContainer.className =
-    'recepe__instructions-container visually-hidden';
+  instructionsContainer.className = 'recepe__instructions-container';
   const title = document.createElement('h4');
   title.textContent = 'Instructions';
   title.className = 'recepe__instructions-title visually-hidden';
@@ -120,7 +119,7 @@ export const renderRecepes = async (recepe) => {
 
   const markup = `<div class='recepe'><div class="recepe__title-nav-container">
   <h3 class="recepe__title">${recepe.title}</h3><div class="recepe__arrows-container"><button class="btn recepe__arrow-left"></button><button class="btn recepe__arrow-right"></button></div></div><div class="recepe__sections">
-  <div class="recepe__video-container"><iframe class="recepe__video" src=${video} width=${iWidth} height=${iHeight} frameborder="0"></iframe><div class="recepe__info-container"><p class="recepe__info-p">Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p></div></div>
+  <div class="recepe__video-container visually-hidden"><iframe class="recepe__video" src=${video} width=${iWidth} height=${iHeight} frameborder="0"></iframe><div class="recepe__info-container"><p class="recepe__info-p">Category: ${recepe.category}</p><p class="recepe__info-p">Cuisine: ${recepe.cuisine}</p></div></div>
   </div></div>
   `;
 
