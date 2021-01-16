@@ -32,3 +32,8 @@ img {
   border: none;
   padding: 1.5rem 4rem;
 }
+@media screen and (max-width: 720px) {
+  .main {
+    flex-direction: column;
+  }
+}
