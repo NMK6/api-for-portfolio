@@ -596,7 +596,7 @@ a:hover {
 
 @media screen and (max-width: 720px) {
   .recepe {
-    padding: 3rem 2rem;
+    padding: 0 3rem 4rem 3rem;
   }
   .recepe__title-nav-container {
     -webkit-box-orient: vertical;
@@ -612,35 +612,40 @@ a:hover {
     -webkit-box-pack: right;
         -ms-flex-pack: right;
             justify-content: right;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     width: 100%;
     padding-top: 0;
+    padding: 3rem;
+    background-color: transparent;
     height: 0;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     position: relative;
   }
   .recepe__title-container::before {
     content: "";
     position: absolute;
     top: 2.5rem;
-    right: 2rem;
+    right: 3rem;
     width: 2.8rem;
     height: 3px;
     background-color: white;
     -webkit-box-shadow: 0 10px 0 white, 0 20px 0 white;
             box-shadow: 0 10px 0 white, 0 20px 0 white;
   }
-  .recepe__arrows-container {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
-  }
   .recepe__titles {
     height: 5rem;
     border-bottom-left-radius: 0;
+    background-color: #83a603;
+    position: relative;
+    z-index: 1;
+  }
+  .recepe__titles::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    background-color: #83a603;
+    height: 100%;
   }
   .recepe__titles-span {
     -webkit-transform: rotate(0);
@@ -648,6 +653,17 @@ a:hover {
   }
   .recepe__video-container {
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 530px) {
+  .recepe {
+    padding: 0 2rem 3rem 2rem;
+  }
+  .recepe__title-container::before {
+    right: 2rem;
+  }
+  .recepe__title-nav-container {
+    margin-bottom: 1rem;
   }
 }
 .first-screen {

@@ -68,7 +68,6 @@ const pickRecepesSesction = (e) => {
   sections.forEach((element) => {
     if (!element.classList.contains('visually-hidden')) {
       element.classList.add('visually-hidden');
-      console.log(element);
     }
   });
   document
@@ -111,12 +110,10 @@ export const renderRecepes = async (recepe) => {
     ? (iWidth = 853)
     : elements.width > 1300
     ? (iWidth = 640)
+    : elements.width >= 530
+    ? (iWidth = elements.width - 112)
     : (iWidth = elements.width - 64);
-  elements.height > 1500
-    ? (iHeight = 505)
-    : elements.width > 1300
-    ? (iHeight = 385)
-    : (iHeight = 'auto');
+  iHeight = iWidth / 1.7;
 
   const markup = `<div class='recepe'><div class="recepe__title-nav-container">
   <h3 class="recepe__title">${recepe.title}</h3><div class="recepe__arrows-container"><button class="btn recepe__arrow-left"></button><button class="btn recepe__arrow-right"></button></div></div><div class="recepe__sections">
@@ -139,4 +136,21 @@ export const clearRecepe = () => {
       secondScreen.removeChild(secondScreen.firstChild);
     }
   }
+};
+
+export const addMobileListener = () => {
+  if (
+    elements.width <= 720 &&
+    document.querySelector('.recepe__title-container')
+  ) {
+    const titles = document.querySelector('.recepe__title-container');
+    titles.classList.add('recepe__mob-nav');
+    const titlesArr = document.querySelectorAll('.recepe__titles ');
+    titlesArr.forEach((title) => title.classList.add('visually-hidden'));
+  }
+};
+
+export const handleMobNav = () => {
+  const titlesArr = document.querySelectorAll('.recepe__titles ');
+  titlesArr.forEach((title) => title.classList.remove('visually-hidden'));
 };

@@ -26,6 +26,7 @@ const handleSearch = async (e) => {
     document
       .querySelector('.recepe__title-container')
       .addEventListener('click', recepeView.showRecepesSection);
+    recepeView.addMobileListener();
   }
 };
 
@@ -56,5 +57,12 @@ document.addEventListener('click', async (e) => {
     state.recepe = new Recepe(state.search.result.meals[state.index]);
     recepeView.clearRecepe();
     await recepeView.renderRecepes(state.recepe);
+  }
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('recepe__mob-nav')) {
+    e.preventDefault();
+    recepeView.handleMobNav();
   }
 });
