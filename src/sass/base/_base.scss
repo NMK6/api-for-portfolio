@@ -35,5 +35,6 @@ img {
 @media screen and (max-width: 720px) {
   .main {
     flex-direction: column;
+    overflow-x: hidden;
   }
 }
