@@ -149,8 +149,21 @@ export const addMobileListener = () => {
     titlesArr.forEach((title) => title.classList.add('visually-hidden'));
   }
 };
-
+// export const removeMobTitles = () => {
+//   const titlesArr = document.querySelectorAll('.recepe__titles ');
+//   const titlesContainer = document.querySelector('.recepe__mob-nav');
+//   if (titlesContainer.classList.contains('visually-hidden')) {
+//     titlesContainer.classList.remove('visually-hidden');
+//   }
+//   titlesArr.forEach((title) => title.classList.add('visually-hidden'));
+// };
 export const handleMobNav = () => {
   const titlesArr = document.querySelectorAll('.recepe__titles ');
-  titlesArr.forEach((title) => title.classList.remove('visually-hidden'));
+
+  titlesArr.forEach((title) => {
+    title.classList.remove('visually-hidden');
+    title.addEventListener('click', (e) => {
+      titlesArr.forEach((title) => title.classList.add('visually-hidden'));
+    });
+  });
 };

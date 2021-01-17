@@ -634,18 +634,17 @@ a:hover {
     height: 5rem;
     border-bottom-left-radius: 0;
     background-color: #83a603;
-    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     z-index: 1;
+    margin-bottom: 1rem;
   }
-  .recepe__titles::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 0;
-    background-color: #83a603;
-    height: 100%;
+  .recepe__titles--one {
+    margin-top: 3rem;
   }
   .recepe__titles-span {
     -webkit-transform: rotate(0);
