@@ -7,7 +7,7 @@
 <img src="/cooking__second-screen-ingredients.png" width="500">
 <h2>Second screeen - video</h2>
 <img src="/cooking__second-screen-video.png" width="500">
+<h3>Second screeen - image mobile</h3>
+<img src="/cooking__second-screen-video-mob.png" width="280">
 <h2>Second screeen - image</h2>
 <img src="/cooking__second-screen-image.png" width="500">
-<h3>Second screeen - image mobile</h3>
-<img src="/cooking__second-screen-image-mob.png" width="500">
