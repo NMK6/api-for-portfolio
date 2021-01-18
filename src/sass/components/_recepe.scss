@@ -26,6 +26,9 @@
     text-transform: capitalize;
     padding: 1.5rem 2rem;
   }
+  &__title {
+    line-height: 0.8;
+  }
 
   &__ingredients-container {
     @include row-flex-center(space-between, column, flex-start);
@@ -33,7 +36,7 @@
   }
   &__title-nav-container {
     @include row-flex-center(space-between, row, center);
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.5rem;
     width: 100%;
   }
   &__arrows-container {

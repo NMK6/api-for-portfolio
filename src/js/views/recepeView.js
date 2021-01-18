@@ -76,12 +76,14 @@ const pickRecepesSesction = (e) => {
 };
 export const showRecepesSection = (e) => {
   e.preventDefault();
-  if (
-    e.target.firstChild.nodeValue == 'ingredients' ||
-    e.target.firstChild.nodeValue == 'instructions' ||
-    e.target.firstChild.nodeValue == 'video'
-  ) {
-    pickRecepesSesction(e);
+  if (document.querySelector('.second-screen').firstChild) {
+    if (
+      e.target.firstChild.nodeValue == 'ingredients' ||
+      e.target.firstChild.nodeValue == 'instructions' ||
+      e.target.firstChild.nodeValue == 'video'
+    ) {
+      pickRecepesSesction(e);
+    }
   }
 };
 export const renderRecepes = async (recepe) => {
@@ -149,14 +151,7 @@ export const addMobileListener = () => {
     titlesArr.forEach((title) => title.classList.add('visually-hidden'));
   }
 };
-// export const removeMobTitles = () => {
-//   const titlesArr = document.querySelectorAll('.recepe__titles ');
-//   const titlesContainer = document.querySelector('.recepe__mob-nav');
-//   if (titlesContainer.classList.contains('visually-hidden')) {
-//     titlesContainer.classList.remove('visually-hidden');
-//   }
-//   titlesArr.forEach((title) => title.classList.add('visually-hidden'));
-// };
+
 export const handleMobNav = () => {
   const titlesArr = document.querySelectorAll('.recepe__titles ');
 

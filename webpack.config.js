@@ -2,7 +2,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     main: ['./src/js/index.js', './src/sass/main.scss'],
   },

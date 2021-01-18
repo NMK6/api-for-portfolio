@@ -12,8 +12,6 @@ export default class Search {
       );
 
       this.result = await res.json();
-    } catch (error) {
-      this.error = `Sorry, the meal you are looking for can't be found.`;
-    }
+    } catch (error) {}
   }
 }

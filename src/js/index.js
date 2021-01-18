@@ -13,20 +13,25 @@ const handleSearch = async (e) => {
   if (query) {
     recepeView.clearRecepe();
     state.search = new Search(query);
+
     searchView.clearInput();
     searchView.clearRecepes();
 
     await state.search.getResult();
+    if ((await state.search.result.meals) == null) {
+      recepeView.clearRecepe();
+      return;
+    } else {
+      state.recepe = new Recepe(state.search.result.meals[state.index]);
 
-    state.recepe = new Recepe(state.search.result.meals[state.index]);
-
-    searchView.squeezeFirstscreen();
-    await recepeView.renderRecepes(state.recepe);
-    searchView.renderResults(state.search.result.meals);
-    document
-      .querySelector('.recepe__title-container')
-      .addEventListener('click', recepeView.showRecepesSection);
-    recepeView.addMobileListener();
+      searchView.squeezeFirstscreen();
+      await recepeView.renderRecepes(state.recepe);
+      searchView.renderResults(state.search.result.meals);
+      document
+        .querySelector('.recepe__title-container')
+        .addEventListener('click', recepeView.showRecepesSection);
+      recepeView.addMobileListener();
+    }
   }
 };
 
