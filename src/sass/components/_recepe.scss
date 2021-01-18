@@ -1,5 +1,5 @@
 .recepe {
-  @include row-flex-center(space-between, column, flex-start);
+  @include row-flex-center(center, column, flex-start);
   width: 100%;
   padding: 4rem 5rem;
   &__title-container {
@@ -27,7 +27,7 @@
     padding: 1.5rem 2rem;
   }
   &__title {
-    line-height: 0.8;
+    line-height: 0.9;
   }
 
   &__ingredients-container {
