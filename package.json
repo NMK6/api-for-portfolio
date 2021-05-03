@@ -8,7 +8,8 @@
     "lint": "eslint ./",
     "lint-fix": "eslint ./ --fix",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack serve --mode development --config webpack.config.js --env development --hot --port 3000"
   },
   "keywords": [],
   "author": "",

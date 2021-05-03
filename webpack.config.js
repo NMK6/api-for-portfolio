@@ -1,14 +1,21 @@
-const path = require('path');
+const path = require("path");
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: ['./src/js/index.js', './src/sass/main.scss'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
+  },
+  devServer: {
+    contentBase: path.join(__dirname, '/'),
+    compress: false,
+
+    hot: true,
+    port: 9000,
   },
   plugins: [new Dotenv()],
   module: {
